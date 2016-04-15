@@ -1,0 +1,35 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,      // 使用ES6
+    "sourceType": "module", // 代码的类型 我们的工作流程中是[module]
+    "ecmaFeatures": {
+      "globalReturn": true, //
+      "impliedStrict": true, //
+      "jsx": false,          //
+      "experimentalObjectRestSpread": false
+    }
+  },
+  "plugins": [
+    "angular"
+  ],
+//  "parser": "esprima",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "mocha": true,
+    "jasmine": true,
+    "phantomjs": true,
+    "jquery": true,
+    "protractor": true,
+    "angular/angular": true,
+    "angular/mocks": true,
+    "angular/protractor": true
+  },
+  "rules": {
+    "eqeqeq": 0,
+    "curly": 2,
+//    "quotes": [2, "single"],
+    "angular/controller-name": 2
+  }
+}
