@@ -1,0 +1,30 @@
+<div class="update-user-birthday">
+    <div class="weui_cells weui_cells_form">
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary" windmill-date>
+                <input id="date" ng-model="vm.userInfo.base_birth" class="weui_input" type="text" placeholder="您的生日">
+            </div>
+        </div>
+    </div>
+
+    <div class="update-user-birthday__generate">
+        <a class="weui_btn weui_btn_primary" ng-click="vm.updateUserInfo()">确定修改</a>
+    </div>
+</div>
+
+<!-- toast -->
+<weui-toast
+        show="vm.show_toast"
+        toast-info="vm.toast_info">
+</weui-toast>
+<!-- toast -->
+
+<!-- alert-dialog -->
+<weui-alert-dialog
+        alert-dialog-title="vm.alert_dialog_title"
+        alert-dialog-content="vm.alert_dialog_content"
+        alert-dialog-btn-text="vm.alert_dialog_btn_text"
+        show="vm.show_alert_dialog"
+        btn-action="vm.alertDialogAction()">
+</weui-alert-dialog>
+<!-- alert-dialog -->

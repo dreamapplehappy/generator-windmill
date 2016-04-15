@@ -1,0 +1,18 @@
+<div id="actionSheet_wrap">
+    <div class="weui_mask_transition"
+         ng-show="$ctrl.show"
+         ng-class="{'weui_fade_toggle': $ctrl.show}"
+         ng-click="$ctrl.hideActionSheet()"
+         id="mask" ></div>
+    <div ng-class="{'weui_actionsheet_toggle': $ctrl.show}" class="weui_actionsheet" id="weui_actionsheet">
+        <div class="weui_actionsheet_menu">
+            <div class="weui_actionsheet_cell">示例菜单1</div>
+            <div class="weui_actionsheet_cell">示例菜单2</div>
+            <div class="weui_actionsheet_cell">示例菜单3</div>
+            <div class="weui_actionsheet_cell">示例菜单4</div>
+        </div>
+        <div class="weui_actionsheet_action">
+            <div ng-click="$ctrl.hideActionSheet()" class="weui_actionsheet_cell" id="actionsheet_cancel">取消</div>
+        </div>
+    </div>
+</div>

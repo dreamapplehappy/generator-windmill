@@ -1,0 +1,131 @@
+$app-base-color: #f1f0f8;
+$packets-bg-color: #f5f5f5;
+
+.tab-active-bgc {
+  background-color: #ededed !important;
+}
+
+.coupon-weui_navbar {
+  top: 0;
+  position: fixed;
+  z-index: 999;
+  background-color: $app-base-color;
+}
+.coupon-weui_msg {
+  margin-top: 4em;
+}
+.my-coupon{
+  margin-top: 4em;
+  .my-coupon-content{
+    .single-coupon{
+      width: 95%;
+      margin: 1em auto 0;
+      .upper{
+        border-top-left-radius: .3em;
+        border-top-right-radius: .3em;
+        background-color: #8fc31f;
+        position: relative;
+        .upper-l{
+          width: 30%;
+          display: inline-block;
+          .coupon-logo{
+            margin: .8em 1.4em;
+            height: 3.5em;
+            width: 100%;
+            img{
+              width: 3.5em;
+              border-radius: 50%;
+            }
+          }
+        }
+        .upper-r{
+          display: inline-block;
+          vertical-align: top;
+          color: #fff;
+          text-align: center;
+          width: 65%;
+          .coupon-v{
+            font-size: 1.6em;
+            padding-top: .5rem;
+            span{
+              font-size: 1.8em;
+            }
+          }
+          .coupon-c{
+            text-align: center;
+            margin-bottom: .5rem;
+          }
+        }
+        .tips{
+          display: none;
+          border-top: 1px solid #fff;
+          color: #fff;
+          margin: 0 1em;
+          padding: 0 .5em;
+          line-height: 1.2em;
+          .tips-b{
+            padding: 1em 0;
+            .tips-t{
+              font-size: .9em;
+            }
+            .tips-c{
+              font-size: .8em;
+            }
+          }
+        }
+        &:after{
+          content: " ";
+          width: 100%;
+          height: .5em;
+          position: absolute;
+          bottom: -.25em;
+          background-image: url("../images/point.png");
+          background-size: contain;
+        }
+      }
+      .lower{
+        background-color: #fff;
+        border-bottom-left-radius: .3em;
+        border-bottom-right-radius: .3em;
+        padding: .6em 1em;
+        span{
+          color: #a7a7a7;
+          font-size: .8em;
+        }
+        .lower-l{
+          float: left;
+        }
+        .lower-r{
+          float: right;
+        }
+      }
+    }
+    .single-coupon-used{
+      .upper{
+        background-color: #c9c9c9;
+        .upper-r{
+          color: #8d8d8d;
+        }
+      }
+    }
+  }
+  .footer{
+    position: relative;
+    .footer-text{
+      position: absolute;
+      bottom: -2em;
+      right: .8em;
+      a{
+        color: #000;
+        text-decoration: none;
+        font-size: .8em;
+        span{
+          color: #96c53b;
+        }
+      }
+    }
+  }
+}
+.change-font-size{
+  font-size: 1.2em !important;
+}

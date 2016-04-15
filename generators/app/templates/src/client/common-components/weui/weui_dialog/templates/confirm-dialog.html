@@ -1,0 +1,11 @@
+<div ng-show="$ctrl.show" class="weui_dialog_confirm" id="JS-weui-confirm-dialog">
+    <div ng-click="$ctrl.hideConfirmDialog()" class="weui_mask"></div>
+    <div class="weui_dialog">
+        <div class="weui_dialog_hd"><strong class="weui_dialog_title">{{$ctrl.confirmDialogTitle}}</strong></div>
+        <div class="weui_dialog_bd">{{$ctrl.confirmDialogContent}}</div>
+        <div class="weui_dialog_ft">
+            <a ng-click="$ctrl.leftBtnAction()" class="weui_btn_dialog default">{{$ctrl.confirmDialogLeftBtnText}}</a>
+            <a ng-click="$ctrl.rightBtnAction()" class="weui_btn_dialog primary">{{$ctrl.confirmDialogRightBtnText}}</a>
+        </div>
+    </div>
+</div>

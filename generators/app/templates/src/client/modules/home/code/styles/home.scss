@@ -1,0 +1,593 @@
+$home-header-h: 140px;
+$home-header-content-h: 60px;
+$pic-w: 56px;
+$user-tabs-margin: 15px;
+$user-tabs-height: 44px;
+$tab-section-w: 100px;
+$tab-section-h: 20px;
+$title-text-indent: 10px;
+$activity-padding-top: 14px;
+$activity-padding-left: 1.5625%;
+$activity-padding-lr-p: 3.125%;
+$activity-h: 112px;
+$per-pic-h: 190px;
+$user-progress-height: 49px;
+$user-progress-bar-height: 2px;
+$progress-section-normal-h: 25px;
+$progress-section-active-h: 35px;
+$progress-section-active-w: 45px;
+$progress-section-normal-top: 12px;
+$progress-section-active-top: 7px;
+$progress-show-info-h: 22px;
+
+@mixin tab {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+@mixin tab-section {
+  width: $tab-section-w;
+  margin: 11px auto;
+  height: $tab-section-h;
+  &__img-container {
+    float: left;
+    width: $tab-section-w / 5;
+    height: 100%;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+  }
+  &__words-container {
+    float: left;
+    width: $tab-section-w / 5 * 4;
+    text-align: right;
+    font-size: 18px;
+    height: $tab-section-h;
+    line-height: $tab-section-h;
+  }
+}
+
+@mixin half-section {
+  height: 51px;
+  img {
+    display: block;
+    margin: 0 auto;
+    width: 100% - $activity-padding-lr-p;
+    height: 100%;
+  }
+}
+
+@mixin user-section {
+  height: 100%;
+  width: 25%;
+  float: left;
+}
+
+$header-height : 43vw;
+$header-content-height : $header-height * 120 / 280;
+
+$user-progress-show-progress: 0.54 * $user-progress-height;
+$user-show-img-margin: 0.15 * $user-progress-show-progress;
+
+
+
+$user-tabs-content-height: $user-tabs-height / 2;
+
+
+
+@mixin user-section-normal {
+  img {
+    display: block;
+    margin: 10% auto;
+    height: 80%;
+    width: 80%;
+    background-size: cover;
+  }
+}
+
+@mixin user-section-active {
+  img {
+    display: block;
+    margin-left: -$user-show-img-margin;
+    height: 100%;
+    background-size: cover;
+  }
+}
+
+
+
+.home-container {
+  .home-header {
+    position: relative;
+    height: $home-header-h;
+    background-image: url('../images/home__home-header.png');
+    background-size: contain;
+    overflow: auto;
+    .home-header-content {
+      margin: 40px auto;
+      height: $home-header-content-h;
+
+      &__user-pic-container {
+        width: 25%;
+        float: left;
+        height: 100%;
+
+        .pic-container {
+          width: $home-header-content-h;
+          height: $home-header-content-h;
+          border-radius: 50%;
+          background-color: #c0df98;
+          margin: 0 auto;
+          overflow: auto;
+
+          img {
+            display: block;
+            width: $pic-w;
+            height: $pic-w;
+            border-radius: 50%;
+            margin: ($home-header-content-h - $pic-w) / 2 auto;
+          }
+        }
+      }
+
+      &__user-info {
+        width: 56%;
+        float: left;
+        height: 40px;
+        //margin: 10px auto;
+        margin: 0 auto;
+
+        .user-info-name {
+          height: $home-header-content-h * 5 / 12;
+          .name {
+            display:inline-block;
+            vertical-align:middle;
+            font-size: 18px;
+            color: #fff;
+          }
+          .rank {
+            display:inline-block;
+            vertical-align:middle;
+            font-size: 18px;
+            img {
+              width: 18px;
+              height: 18px;
+              border-radius: 3px;
+            }
+          }
+        }
+        .user-info-id {
+          height: $home-header-content-h * 1 / 4;
+          font-size: 12px;
+          color: #fff;
+          text-indent: 2px;
+        }
+      }
+
+      &__user-detail {
+        width: 19%;
+        float: left;
+        height: 40px;
+        margin-top: 10px;
+        position: relative;
+        .user-detail-arrow-container {
+          position: absolute;
+          right: 20px;
+          height: 25px;
+          width: 10px;
+          span {
+            margin: 3.5px auto;
+            width: 10px;
+            height: 18px;
+            display:inline-block;
+            vertical-align:middle;
+            background-image: url('../images/home__home-user-detail-arrow.png');
+            background-size: cover;
+          }
+        }
+      }
+    }
+  }
+
+  .user-tabs {
+    margin-top: $user-tabs-margin;
+    height: $user-tabs-height;
+    &-left {
+      background-color: #fff;
+      position: relative;
+      &:after {
+        position: absolute;
+        content: '';
+        width: 1px;
+        height: 100%;
+        border-right: 1px solid #e5e5e5;
+        top: 0;
+        right: 0;
+      }
+      @include tab;
+      .section {
+        @include tab-section;
+      }
+
+    }
+    &-right {
+      background-color: #fff;
+      @include tab;
+      .section {
+        @include tab-section;
+      }
+    }
+  }
+}
+
+
+.per-pic-padding {
+  margin-top: $user-tabs-margin;
+}
+
+.home-container {
+
+  .user-progress {
+    z-index: -1;
+    width: 100%;
+    position: absolute;
+    height: $user-progress-height;
+    background-color: #fff;
+
+    &-bar {
+      width: 75%;
+      height: $user-progress-bar-height;
+      margin: ($user-progress-height -$user-progress-bar-height) / 2 auto;
+      &__rank-1-2,
+      &__rank-2-3,
+      &__rank-3-4
+      {
+        width: 33%;
+        height: 100%;
+        float: left;
+        background-color: #890;
+      }
+    }
+  }
+
+  .user-progress-show {
+    height: $user-progress-height;
+
+    &__section-normal {
+      height: $progress-section-active-h;
+      width: $progress-section-active-w;
+      margin: $progress-section-active-top auto;
+      position: relative;
+      .normal {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &__section-disabled {
+      position: relative;
+      height: $progress-section-normal-h;
+      width: $progress-section-normal-h;
+      margin: $progress-section-normal-top auto;
+      background-color: #fff;
+      .disabled {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+    }
+
+    &__section-active {
+      position: relative;
+      height: $progress-section-normal-h;
+      width: $progress-section-normal-h;
+      margin: $progress-section-normal-top auto;
+      background-color: #fff;
+      .active {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+    }
+
+    &__rank--0 {
+      @include user-section;
+    }
+    &__rank--1 {
+      @include user-section;
+    }
+    &__rank--2 {
+      @include user-section;
+    }
+    &__rank--3 {
+      @include user-section;
+    }
+  }
+
+  .f-normal {
+    font-size: 11px;
+    color: #c9c9c9;
+    white-space:nowrap;
+  }
+  .f-active {
+    font-size: 12px;
+    margin-top: -1px;
+    color: #000;
+    white-space:nowrap;
+  }
+  .f-left-words{
+    text-align: left;
+  }
+  .f-right-words{
+    text-align: right;
+  }
+  .f-center-words{
+    text-align: center;
+  }
+  .progress-disabled {
+    background-color: #888;
+  }
+  .progress-normal {
+    background: linear-gradient(90deg, #8ebf30, #888);
+  }
+  .progress-active {
+    background-color: #8ebf30;
+  }
+
+  .user-progress-show-info {
+    height: $progress-show-info-h;
+    background-color: #fff;
+    .words-container-rank--0,
+    .words-container-rank--1,
+    .words-container-rank--2,
+    .words-container-rank--3
+    {
+      @include user-section;
+    }
+  }
+
+
+  .re-ac {
+    margin-top: $user-tabs-margin;
+
+    &__title {
+      text-indent: $title-text-indent;
+      font-size: 18px;
+      color: #888;
+    }
+
+    &__activities {
+      background-color: #fff;
+      padding: $activity-padding-top $activity-padding-left;
+      height: $activity-h;
+
+      &-0 {
+        display: block;
+        margin: 0 auto;
+        padding: 0 1.5625vw;
+        height: 34.375vw;
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      &-1 {
+        display: block;
+        margin: 0 auto;
+        height: 34.375vw;
+        &-1 {
+          width: 50%;
+          float: left;
+          img {
+            display: block;
+            margin: 0 auto;
+            width: 45.3125vw;
+            height: 100%;
+          }
+        }
+        &-2 {
+          width: 50%;
+          float: left;
+          img {
+            display: block;
+            margin: 0 auto;
+            width: 45.3125vw;
+            height: 100%;
+          }
+        }
+      }
+
+      &-2 {
+        display: block;
+        margin: 0 auto;
+        height: 34.375vw;
+        &-1 {
+          width: 50%;
+          float: left;
+          &-1 {
+            height: 15.625vw;
+            img {
+              display: block;
+              margin: 0 auto;
+              width: 45.3125vw;
+              height: 100%;
+            }
+          }
+
+          &-2 {
+            margin-top: 3.125vw;
+            height: 15.625vw;
+            img {
+              display: block;
+              margin: 0 auto;
+              width: 45.3125vw;
+              height: 100%;
+            }
+          }
+        }
+        &-2 {
+          width: 50%;
+          float: left;
+          img {
+            display: block;
+            margin: 0 auto;
+            width: 45.3125vw;
+            height: 100%;
+          }
+        }
+      }
+
+      &-3 {
+        display: block;
+        margin: 0 auto;
+        height: $activity-h;
+        &-2 {
+          width: 50%;
+          float: left;
+          &-1 {
+            @include half-section;
+          }
+
+          &-2 {
+            margin-top: 10px;
+            @include half-section;
+          }
+        }
+        &-1 {
+          width: 50%;
+          float: left;
+          img {
+            display: block;
+            margin: 0 auto;
+            width: 100% - $activity-padding-lr-p;
+            height: 100%;
+          }
+        }
+      }
+
+      &-4 {
+        display: block;
+        margin: 0 auto;
+        height: 34.375vw;
+        &-1 {
+          width: 50%;
+          float: left;
+          &-1 {
+            height: 15.625vw;
+            img {
+              display: block;
+              margin: 0 auto;
+              width: 45.3125vw;
+              height: 100%;
+            }
+          }
+
+          &-2 {
+            margin-top: 3.125vw;
+            height: 15.625vw;
+            img {
+              display: block;
+              margin: 0 auto;
+              width: 45.3125vw;
+              height: 100%;
+            }
+          }
+        }
+        &-2 {
+          width: 50%;
+          float: left;
+          &-1 {
+            height: 15.625vw;
+            img {
+              display: block;
+              margin: 0 auto;
+              width: 45.3125vw;
+              height: 100%;
+            }
+          }
+
+          &-2 {
+            margin-top: 3.125vw;
+            height: 15.625vw;
+            img {
+              display: block;
+              margin: 0 auto;
+              width: 45.3125vw;
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .social-welfare {
+    margin-top: $user-tabs-margin;
+
+    &__title {
+      text-indent: $title-text-indent;
+      font-size: 18px;
+      color: #888;
+    }
+
+    &__content {
+      background-color: #fff;
+      padding: $activity-padding-top $activity-padding-left;
+    }
+
+    &__per-pic {
+      position: relative;
+      padding: 0 $activity-padding-left;
+      height: $per-pic-h;
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .pic-label {
+        background-color: rgba(0,0,0,.5);
+        width: 100% - $activity-padding-left * 2;
+        height: $per-pic-h / 6;
+        position: absolute;
+        bottom: 0;
+        .info {
+          display: inline-block;
+          height: 100%;
+          line-height: $per-pic-h / 6;
+          text-indent: $title-text-indent;
+          font-size: 18px;
+          color: #fff;
+        }
+        .read-info {
+          color: #fff;
+          font-size: 14px;
+          float: right;
+          line-height: $per-pic-h / 6;
+          margin-right: $activity-padding-left;
+        }
+      }
+    }
+  }
+
+  .btn-container {
+    margin: $user-tabs-margin auto;
+    padding: 0 $activity-padding-left * 2;
+    button {
+
+    }
+    .active {
+      background-color: #8ebf30;
+    }
+    .disabled {
+      background-color: #8ebf30;
+    }
+  }
+}

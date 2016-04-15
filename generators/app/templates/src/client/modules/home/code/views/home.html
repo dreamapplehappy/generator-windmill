@@ -1,0 +1,232 @@
+<div class="home-container">
+
+    <div class="home-header">
+        <div class="home-header-content">
+            <div class="home-header-content__user-pic-container">
+                <div class="pic-container">
+                    <img ng-src="{{vm.userInfo.wx_headpic}}" alt="">
+                </div>
+            </div>
+            <div class="home-header-content__user-info">
+                <div class="user-info-name">
+                    <span class="name">{{vm.userInfo.base_name || vm.userInfo.wx_nickname}}</span>
+                    <span class="rank">
+                        <img ng-show="1 == vm.userInfo.user_profile.rank" src="../images/home__home-user-c.png" alt="">
+                        <img ng-show="2 == vm.userInfo.user_profile.rank" src="../images/home__home-user-a.png" alt="">
+                        <img ng-show="3 == vm.userInfo.user_profile.rank" src="../images/home__home-user-y.png" alt="">
+                        <img ng-show="4 == vm.userInfo.user_profile.rank" src="../images/home__home-user-l.png" alt="">
+                    </span>
+                </div>
+                <div class="user-info-id">逸族ID: {{vm.userInfo.user_profile.id + 10000}}</div>
+                <div class="user-info-id">逸族币: 0</div>
+            </div>
+            <div class="home-header-content__user-detail" ui-sref="user-detail({id: 1})">
+                <div class="user-detail-arrow-container">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="user-progress">
+        <div class="user-progress-bar">
+            <div class="user-progress-bar__rank-1-2"
+                 ng-class="{'progress-normal': 1 === vm.userInfo.user_profile.rank,
+                            'progress-disabled': 1 > vm.userInfo.user_profile.rank,
+                            'progress-active': 1 < vm.userInfo.user_profile.rank}"></div>
+            <div class="user-progress-bar__rank-2-3"
+                 ng-class="{'progress-normal': 2 === vm.userInfo.user_profile.rank,
+                            'progress-disabled': 2 > vm.userInfo.user_profile.rank,
+                            'progress-active': 2 < vm.userInfo.user_profile.rank}"></div>
+            <div class="user-progress-bar__rank-3-4"
+                 ng-class="{'progress-normal': 3 === vm.userInfo.user_profile.rank,
+                            'progress-disabled': 3 > vm.userInfo.user_profile.rank,
+                            'progress-active': 3 < vm.userInfo.user_profile.rank}"></div>
+        </div>
+    </div>
+    <div class="user-progress-show">
+        <div class="user-progress-show__rank--0">
+            <div class="user-progress-show__section-normal" ng-show="1 === vm.userInfo.user_profile.rank">
+                <img class="normal" src="../images/home__level-c-normal.png" alt="">
+            </div>
+            <div class="user-progress-show__section-active" ng-show="1 < vm.userInfo.user_profile.rank">
+                <img class="active" src="../images/home__level-c-active.png" alt="">
+            </div>
+            <div class="user-progress-show__section-disabled" ng-show="1 > vm.userInfo.user_profile.rank">
+                <img class="disabled" src="../images/home__level-c-disabled.png" alt="">
+            </div>
+        </div>
+        <div class="user-progress-show__rank--1">
+            <div class="user-progress-show__section-normal" ng-show="2 === vm.userInfo.user_profile.rank">
+                <img class="normal" src="../images/home__level-like-normal.png" alt="">
+            </div>
+            <div class="user-progress-show__section-active" ng-show="2 < vm.userInfo.user_profile.rank">
+                <img class="active" src="../images/home__level-like-active.png" alt="">
+            </div>
+            <div class="user-progress-show__section-disabled" ng-show="2 > vm.userInfo.user_profile.rank">
+                <img class="disabled" src="../images/home__level-like-disabled.png" alt="">
+            </div>
+        </div>
+        <div class="user-progress-show__rank--2">
+            <div class="user-progress-show__section-normal" ng-show="3 == vm.userInfo.user_profile.rank">
+                <img class="normal" src="../images/home__level-y-normal.png" alt="">
+            </div>
+            <div class="user-progress-show__section-active" ng-show="3 < vm.userInfo.user_profile.rank">
+                <img class="active" src="../images/home__level-y-active.png" alt="">
+            </div>
+            <div class="user-progress-show__section-disabled" ng-show="3 > vm.userInfo.user_profile.rank">
+                <img class="disabled" src="../images/home__level-y-disabled.png" alt="">
+            </div>
+        </div>
+        <div class="user-progress-show__rank--3">
+            <div class="user-progress-show__section-normal" ng-show="4 == vm.userInfo.user_profile.rank">
+                <img class="normal" src="../images/home__level-leader-normal.png" alt="">
+            </div>
+            <div class="user-progress-show__section-active" ng-show="4 < vm.userInfo.user_profile.rank">
+                <img class="active" src="../images/home__level-leader-active.png" alt="">
+            </div>
+            <div class="user-progress-show__section-disabled" ng-show="4 > vm.userInfo.user_profile.rank">
+                <img class="disabled" src="../images/home__level-leader-disabled.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="user-progress-show-info">
+        <div class="words-container-rank--0 f-center-words"
+             ng-class="{'f-normal': 1 !== vm.userInfo.user_profile.rank,
+                        'f-active': 1 === vm.userInfo.user_profile.rank}">社群参与者</div>
+        <div class="words-container-rank--1 f-center-words"
+             ng-class="{'f-normal': 2 !== vm.userInfo.user_profile.rank,
+                        'f-active': 2 === vm.userInfo.user_profile.rank}">社群爱好者</div>
+        <div class="words-container-rank--2 f-center-words"
+             ng-class="{'f-normal': 3 !== vm.userInfo.user_profile.rank,
+                        'f-active': 3 === vm.userInfo.user_profile.rank}">社群运营者</div>
+        <div class="words-container-rank--3 f-center-words"
+             ng-class="{'f-normal': 4 !== vm.userInfo.user_profile.rank,
+                        'f-active': 4 === vm.userInfo.user_profile.rank}">社群领袖</div>
+    </div>
+
+    <div class="user-tabs">
+        <div class="user-tabs-left" ui-sref="packets">
+            <div class="section">
+                <div class="section__img-container">
+                    <img src="../images/home__home-user-cards.png" alt="">
+                </div>
+                <div class="section__words-container">
+                    我的卡包
+                </div>
+            </div>
+        </div>
+        <div class="user-tabs-right" ui-sref="home">
+            <div class="section">
+                <div class="section__img-container">
+                    <img src="../images/home__home-user-msg.png" alt="">
+                </div>
+                <div class="section__words-container">
+                    我的消息
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="re-ac">
+        <div class="re-ac__title">推荐活动</div>
+        <div class="re-ac__activities">
+            <div class="re-ac__activities-0" ng-show="false">
+                <a>
+                    <img src="../images/home__home-header.png" alt="">
+                </a>
+            </div>
+
+            <div class="re-ac__activities-1" ng-show="false">
+                <div class="re-ac__activities-1-1">
+                    <a href="">
+                        <img src="../images/home__home-header.png" alt="">
+                    </a>
+                </div>
+                <div class="re-ac__activities-1-2">
+                    <img src="../images/home__home-header.png" alt="">
+                </div>
+            </div>
+
+            <div class="re-ac__activities-2" ng-show="false">
+                <div class="re-ac__activities-2-1">
+                    <div class="re-ac__activities-2-1-1">
+                        <img src="http://placehold.it/350x200" alt="">
+                    </div>
+                    <div class="re-ac__activities-2-1-2">
+                        <img src="http://placehold.it/350x200" alt="">
+                    </div>
+                </div>
+                <div class="re-ac__activities-2-2">
+                    <img src="../images/home__home-header.png" alt="">
+                </div>
+            </div>
+
+            <!-- 现在使用的模式 -->
+            <div class="re-ac__activities-3" ng-show="true">
+                <a ng-href="{{vm.activities[0].url}}">
+                    <div class="re-ac__activities-3-1">
+                        <img ng-src="{{vm.activities[0].img}}" alt="">
+                    </div>
+                </a>
+                <div class="re-ac__activities-3-2">
+                    <a ng-href="{{vm.activities[1].url}}">
+                        <div class="re-ac__activities-3-2-1">
+                            <img ng-src="{{vm.activities[1].img}}" alt="">
+                        </div>
+                    </a>
+                    <a ng-href="{{vm.activities[2].url}}">
+                        <div class="re-ac__activities-3-2-2">
+                            <img ng-src="{{vm.activities[2].img}}" alt="">
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="re-ac__activities-4" ng-show="false">
+                <div class="re-ac__activities-4-1">
+                    <div class="re-ac__activities-4-1-1">
+                        <img src="http://placehold.it/350x200" alt="">
+                    </div>
+                    <div class="re-ac__activities-4-1-2">
+                        <img src="http://placehold.it/350x200" alt="">
+                    </div>
+                </div>
+                <div class="re-ac__activities-4-2">
+                    <div class="re-ac__activities-4-2-1">
+                        <img src="http://placehold.it/350x200" alt="">
+                    </div>
+                    <div class="re-ac__activities-4-2-2">
+                        <img src="http://placehold.it/350x200" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="social-welfare">
+        <div class="social-welfare__title">社群福利</div>
+        <div class="social-welfare__content">
+
+            <a ui-sref="welfare-detail({id:v.id,association_id:v.association_id})" ng-repeat="v in vm.welfares track by $index">
+                <div class="social-welfare__per-pic"
+                     ng-class="{'per-pic-padding': !$first}">
+                    <img ng-src="{{v.img}}" alt="">
+                    <div class="pic-label">
+                        <div class="info">{{v.name}}</div>
+                        <span class="read-info">阅读({{vm.PVS[$index]}})</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="btn-container">
+        <button ng-class="{active: vm.btnStatus,
+                            disabled: !vm.btnStatus}"
+                ng-disabled="!vm.btnStatus"
+                ng-click="vm.getActivities()"
+                class="weui_btn weui_btn_primary">{{vm.btnText}}</button>
+    </div>
+</div>

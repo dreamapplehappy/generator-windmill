@@ -1,0 +1,175 @@
+$ticket-container-h: 435px;
+$ticket-padding: 45px;
+$ticket-h: 375px;
+$ticket-lr-padding: 4.6875%;
+$ticket-radius: 6px;
+$ticket-up-h: 125px;
+$ticket-down-h: 250px;
+$logo-container-size: 30px;
+$logo-size: 25px;
+$fix-ticket-circle-size: 5px;
+$qr-code-size: 122.5px;
+$qr-code-margin-top: 20px;
+$coupon-code: 15px;
+$ticket-info: 12px;
+$ticket-limit-date: 10px;
+
+.red-packet-bgc {
+  background-color: #d15035;
+}
+.coupon-bgc {
+  background-color: #8fc31f;
+}
+
+.packets-detail-container {
+  .packets-detail-ticket {
+    height: $ticket-container-h;
+    padding-top: $ticket-padding;
+
+    &__content {
+      margin-left: $ticket-lr-padding;
+      margin-right: $ticket-lr-padding;
+      width: 100% - 2 * $ticket-lr-padding;
+      height: $ticket-h;
+      background-color: #fff;
+      border-radius: $ticket-radius;
+
+      .up {
+        //overflow: auto;
+        height: $ticket-up-h;
+        border-bottom: 1px dashed #e5e5e5;
+        .logo-container {
+          position: absolute;
+          left: 50%;
+          width: $logo-container-size * 2;
+          height: $logo-container-size * 2;
+          border-radius: 50%;
+          background-color: #fff;
+          margin-top: -$logo-container-size;
+          margin-left: -$logo-container-size;
+
+          img {
+            display: block;
+            width: $logo-size * 2;
+            height: $logo-size * 2;
+            border-radius: 50%;
+            margin: ($logo-container-size - $logo-size);
+          }
+        }
+        .business-name-padding {
+          height: 44px;
+        }
+        .business-name {
+          //margin-top: 44px;
+          font-size: 14px;
+          text-align: center;
+          color: #888;
+        }
+        .ticket-name {
+          margin-top: 20px;
+          font-size: 25px;
+          text-align: center;
+          color: #000;
+        }
+      }
+      .down {
+        position: relative;
+        height: $ticket-down-h;
+
+        .qr-code {
+          margin: $qr-code-margin-top auto;
+          width: $qr-code-size;
+          height: $qr-code-size;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .coupon-code {
+          margin-top: 20px;
+          text-align: center;
+          line-height: $coupon-code;
+          font-size: $coupon-code;
+          height: $coupon-code;
+        }
+
+        .info {
+          margin-top: 20px;
+          text-align: center;
+          color: #888;
+          line-height: $ticket-info;
+          font-size: $ticket-info;
+          height: $ticket-info;
+        }
+
+        .limit-date {
+          margin-top: 6px;
+          text-align: center;
+          color: #888;
+          line-height: $ticket-limit-date;
+          font-size: $ticket-limit-date;
+          height: $ticket-limit-date;
+        }
+
+        .fix-ticket-circle-l,
+        .fix-ticket-circle-r{
+          position: absolute;
+          width: $fix-ticket-circle-size * 2;
+          height: $fix-ticket-circle-size * 2;
+          border-radius: 50%;
+        }
+        .fix-ticket-circle-l {
+          left: -$fix-ticket-circle-size;
+          top: -$fix-ticket-circle-size - $qr-code-margin-top;
+        }
+        .fix-ticket-circle-r {
+          right: -$fix-ticket-circle-size;
+          top: -$fix-ticket-circle-size - $qr-code-margin-top;
+        }
+      }
+    }
+  }
+
+  .packets-detail {
+    &__title {
+      font-size: 18px;
+    }
+    &__little-title {
+      font-size: 15px;
+      padding-top: 10px;
+    }
+    &__content {
+      line-height: 28px;
+      color: #888888;
+      font-size: 15px;
+    }
+  }
+}
+.weui_article {
+  padding-top: 0;
+  position: relative;
+  &:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid #d9d9d9;
+    color: #d9d9d9;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    left: 15px;
+  }
+  .about-us {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+  }
+  .wechat-number {
+    text-align: center;
+  }
+}

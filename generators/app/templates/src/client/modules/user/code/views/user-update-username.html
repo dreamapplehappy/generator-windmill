@@ -1,0 +1,31 @@
+<div class="update-user-username">
+    <div class="weui_cells weui_cells_form">
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <input ng-model="vm.userInfo.base_name" class="weui_input" type="text" placeholder="您的用户名">
+            </div>
+            <a ng-show="vm.userInfo.base_name" ng-click="vm.clearUserMsg()" class="weui_icon_clear" id="search_clear"></a>
+        </div>
+    </div>
+
+    <div class="update-user-username__generate">
+        <a class="weui_btn weui_btn_primary" ng-click="vm.updateUserInfo()">确定修改</a>
+    </div>
+</div>
+
+<!-- toast -->
+<weui-toast
+        show="vm.show_toast"
+        toast-info="vm.toast_info">
+</weui-toast>
+<!-- toast -->
+
+<!-- alert-dialog -->
+<weui-alert-dialog
+        alert-dialog-title="vm.alert_dialog_title"
+        alert-dialog-content="vm.alert_dialog_content"
+        alert-dialog-btn-text="vm.alert_dialog_btn_text"
+        show="vm.show_alert_dialog"
+        btn-action="vm.alertDialogAction()">
+</weui-alert-dialog>
+<!-- alert-dialog -->

@@ -1,0 +1,13 @@
+.action-sheet {
+  &--show {
+    display: block;
+ }
+}
+.weui_mask_transition {
+  display: block;
+  -webkit-transition:all linear 0.3s;
+  transition:all linear 0.3s;
+  &.ng-hide {
+    opacity: 0;
+  }
+}

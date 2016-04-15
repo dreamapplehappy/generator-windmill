@@ -1,0 +1,54 @@
+<div class="packets-detail-container">
+    <div class="packets-detail-ticket red-packet-bgc">
+        <div class="packets-detail-ticket__content">
+            <div class="up">
+                <div class="logo-container">
+                    <img ng-src="{{vm.redPacket.business.logo}}" alt="">
+                </div>
+                <div class="business-name-padding"></div>
+                <div class="business-name">{{vm.redPacket.business.shop_name}}</div>
+                <div class="ticket-name">{{vm.redPacket.red_packet_template.data.value}}元现金红包</div>
+            </div>
+            <div class="down">
+                <div class="red-packet-bgc fix-ticket-circle-l"></div>
+                <div class="red-packet-bgc fix-ticket-circle-r"></div>
+                <div class="qr-code">
+                    <img ng-src="/common/qrcode?key={{vm.toUrl(vm.redPacket.red_packet_template.id, vm.redPacket.no)}}" alt="">
+                </div>
+                <div class="coupon-code">{{vm.redPacket.no}}</div>
+                <!--<div class="info">{{vm.redPacket.red_packet_template.intro}}</div>-->
+                <div class="limit-date">有效期: {{vm.redPacket.red_packet_template.begin_time}} - {{vm.redPacket.red_packet_template.end_time}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="packets-detail">
+        <div class="weui_cells">
+            <div class="weui_cell">
+                <div class="weui_cell_hd"></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p class="packets-detail__title">红包详情</p>
+                </div>
+            </div>
+
+            <article class="weui_article">
+                <section>
+                    <section>
+                        <h3 class="packets-detail__little-title">使用规则</h3>
+                        <p class="packets-detail__content" ng-bind-html="vm.replaceDetail(vm.redPacket.red_packet_template.intro)"></p>
+                    </section>
+                    <section>
+                        <h3 class="packets-detail__little-title">适用门店</h3>
+                        <p class="packets-detail__content" ng-bind-html="vm.replaceDetail(vm.redPacket.business.shop_address)"></p>
+                    </section>
+                    <section ng-show="vm.wx.qrcode || vm.wx.name">
+                        <h3 class="packets-detail__little-title">关于我们</h3>
+                        <img ng-show="vm.wx.qrcode" class="about-us" ng-src="{{vm.wx.qrcode}}" alt="">
+                        <p ng-show="vm.wx.name" class="wechat-number">微信公众号: {{vm.wx.name}}</p>
+                    </section>
+                </section>
+            </article>
+        </div>
+    </div>
+
+</div>

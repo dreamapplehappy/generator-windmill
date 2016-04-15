@@ -1,0 +1,26 @@
+<!-- 下面部分是我们的html部分 我们强烈建议使用一个[div]包裹我们的业务html代码 -->
+<!-- 目的是方便我们划分片段,以及给[css]命名 -->
+<div class="Manage">
+    <h1 class="title">这是Manage页面{{manage.name}}</h1>
+    <button ng-click="manage.sayHello()">sayHello</button>
+    <hr>
+    <da-tabs class="tabs">
+        <div class="tabs-inner">
+            <da-pane class="pane" ng-repeat="i in [1,2] track by $index" title="Hello">
+                <div class="pane-inner">
+                    <h4>Hello</h4>
+                    <p>Lorem ipsum dolor sit amet</p>
+                </div>
+            </da-pane>
+            <da-pane class="pane" title="World">
+                <div class="pane-inner">
+                    <h4>World</h4>
+                    <em>Mauris elementum elementum enim at suscipit.</em>
+                    <p><a href ng-click="i = i + 1">counter: {{i || 0}}</a></p>
+                </div>
+            </da-pane>
+        </div>
+    </da-tabs>
+    <hr>
+    <show-demo></show-demo>
+</div>

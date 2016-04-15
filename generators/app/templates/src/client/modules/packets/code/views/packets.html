@@ -1,0 +1,20 @@
+<div class="packets-container">
+    <div ng-repeat="v in vm.packetsDetail"
+            class="weui_cells weui_cells_access" ng-class="{'packet-padding': !$first}">
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>{{v.name| packetsNameFilter}}</p>
+            </div>
+        </div>
+        <div class="weui_cell" ui-sref="{{v.name | packetsHrefFilter}}">
+            <div class="weui_cell_hd">
+                <img class="packet-logo" ng-src="{{v.img}}" alt="">
+            </div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>共{{v.data.length}}{{v.name | packetsAccountNameFilter}}可用{{v.name| packetsNameFilter}}</p>
+            </div>
+            <div class="weui_cell_ft">
+            </div>
+        </div>
+    </div>
+</div>

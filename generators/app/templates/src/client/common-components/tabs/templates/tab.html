@@ -1,0 +1,9 @@
+<div class="tabbable">
+    <ul class="nav nav-tabs">
+        <li ng-repeat="pane in $ctrl.panes" ng-class="{active:pane.selected}">
+            <a href="" ng-click="$ctrl.select(pane)">{{pane.title}}</a>
+        </li>
+    </ul>
+    <div>下面部分是组件里面的元素</div>
+    <div class="tab-content" ng-transclude></div>
+</div>

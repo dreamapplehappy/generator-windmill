@@ -1,0 +1,23 @@
+.demo-login-form {
+  background-color: #0ff;
+
+  &__input-control {
+    border: 1px solid black;
+
+    &--active {
+      background-color: #f0f;
+    }
+  }
+
+  &__label {
+    padding: 3px;
+  }
+
+  &__username {
+    margin: 1px;
+  }
+
+  &__password {
+    padding: 5px;
+  }
+}
