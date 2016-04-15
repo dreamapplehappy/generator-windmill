@@ -28,12 +28,33 @@ module.exports = yeoman.Base.extend({
     }.bind(this));
   },
 
-  writing: function () {
-    this.fs.copy(
-      this.templatePath('dummyfile.txt'),
-      this.destinationPath('dummyfile.txt')
-    );
+  writing: {
+    config: function() {
+      this.fs.copyTpl(
+        this.templatePath('_package.json'),
+        this.destinationPath('package.json'), {
+          name: this.props.name
+        }
+      );
+      this.fs.copyTpl(
+        this.templatePath('_bower.json'),
+        this.destinationPath('bower.json'), {
+          name: this.props.name
+        }
+      );
+      this.fs.copy(
+        this.templatePath('bowerrc'),
+        this.destinationPath('.bowerrc')
+      );
+    },
   },
+
+  //writing: function () {
+  //  this.fs.copy(
+  //    this.templatePath('dummyfile.txt'),
+  //    this.destinationPath('dummyfile.txt')
+  //  );
+  //},
 
   install: function () {
     this.installDependencies();
