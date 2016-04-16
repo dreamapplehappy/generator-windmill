@@ -224,7 +224,159 @@ module.exports = yeoman.Base.extend({
       this.fs.copy(
         this.templatePath('_src/_client/_common-components/_weui/_weui_toast/_templates/_toast.html'),
         this.destinationPath('src/client/common-components/weui/weui_toast/templates/toast.html'));
-
+      // client common-directives demo
+      this.fs.copy(
+        this.templatePath('_src/_client/_common-directives/_demo/_index.js'),
+        this.destinationPath('src/client/common-directives/demo/index.js'));
+      this.fs.copy(
+        this.templatePath('_src/_client/_common-directives/_demo/_demo.html'),
+        this.destinationPath('src/client/common-directives/demo/demo.html'));
+      // client common-filters
+      this.fs.copy(
+        this.templatePath('_src/_client/_common-filters/_replace-detail.filter.js'),
+        this.destinationPath('src/client/common-filters/replace-detail.filter.js'));
+      // client common-services
+      this.fs.copy(
+        this.templatePath('_src/_client/_common-services/_global/_index.js'),
+        this.destinationPath('src/client/common-services/global/index.js'));
+      this.fs.copy(
+        this.templatePath('_src/_client/_common-services/_http/_index.js'),
+        this.destinationPath('src/client/common-services/http/index.js'));
+      // client lib
+      this.fs.copy(
+        this.templatePath('_src/_client/_lib/_home/_app.css'),
+        this.destinationPath('src/client/lib/home/app.css'));
+      this.fs.copy(
+        this.templatePath('_src/_client/_lib/_home/_please-wait/_please-wait.css'),
+        this.destinationPath('src/client/lib/home/please-wait/please-wait.css'));
+      this.fs.copy(
+        this.templatePath('_src/_client/_lib/_home/_please-wait/_please-wait.min.js'),
+        this.destinationPath('src/client/lib/home/please-wait/please-wait.min.js'));
+      // client modules
+      // client modules 404
+      this.fs.copy(
+        this.templatePath('_src/_client/_modules/_404/_code/_controllers/_404.controller.js'),
+        this.destinationPath('src/client/modules/404/code/controllers/404.controller.js'));
+      this.fs.copy(
+        this.templatePath('_src/_client/_modules/_404/_code/_views/_404.html'),
+        this.destinationPath('src/client/modules/404/code/views/404.html'));
+      this.fs.copy(
+        this.templatePath('_src/_client/_modules/_404/_code/_404.js'),
+        this.destinationPath('src/client/modules/404/code/404.js'));
+      this.fs.copy(
+        this.templatePath('_src/_client/_modules/_404/_code/_404.routing.js'),
+        this.destinationPath('src/client/modules/404/code/404.routing.js'));
+      // client modules demo
+      this.fs.copy(
+        this.templatePath('_src/_client/_modules/_demo/_code/_controllers/_demo.controller.js'),
+        this.destinationPath('src/client/modules/demo/code/controllers/demo.controller.js'));
+      this.fs.copy(
+        this.templatePath('_src/_client/_modules/_demo/_code/_views/_demo.html'),
+        this.destinationPath('src/client/modules/demo/code/views/demo.html'));
+      this.fs.copy(
+        this.templatePath('_src/_client/_modules/_demo/_code/_services/_demo.service.js'),
+        this.destinationPath('src/client/modules/demo/code/services/demo.service.js'));
+      this.fs.copy(
+        this.templatePath('_src/_client/_modules/_demo/_code/_demo.js'),
+        this.destinationPath('src/client/modules/demo/code/demo.js'));
+      this.fs.copy(
+        this.templatePath('_src/_client/_modules/_demo/_code/_demo.routing.js'),
+        this.destinationPath('src/client/modules/demo/code/demo.routing.js'));
+      // client modules home
+      this.fs.copy(
+        this.templatePath('_src/_client/_modules/_home/_code/_controllers/_home.controller.js'),
+        this.destinationPath('src/client/modules/home/code/controllers/home.controller.js'));
+      this.fs.copy(
+        this.templatePath('_src/_client/_modules/_home/_code/_views/_home.html'),
+        this.destinationPath('src/client/modules/home/code/views/home.html'));
+      this.fs.copy(
+        this.templatePath('_src/_client/_modules/_home/_code/_images/_angular.png'),
+        this.destinationPath('src/client/modules/home/code/images/angular.png'));
+      this.fs.copy(
+        this.templatePath('_src/_client/_modules/_home/_code/_styles/_home.scss'),
+        this.destinationPath('src/client/modules/home/code/styles/home.scss'));
+      this.fs.copy(
+        this.templatePath('_src/_client/_modules/_home/_code/_services/_home.service.js'),
+        this.destinationPath('src/client/modules/home/code/services/home.service.js'));
+      this.fs.copy(
+        this.templatePath('_src/_client/_modules/_home/_code/_home.js'),
+        this.destinationPath('src/client/modules/home/code/home.js'));
+      this.fs.copy(
+        this.templatePath('_src/_client/_modules/_home/_code/_home.routing.js'),
+        this.destinationPath('src/client/modules/home/code/home.routing.js'));
+      this.fs.copy(
+        this.templatePath('_src/_client/_modules/_home/_test/_home.spec.js'),
+        this.destinationPath('src/client/modules/home/test/home.spec.js'));
+      // client modules manage
+      this.fs.copy(
+        this.templatePath('_src/_client/_modules/_manage/_code/_controllers/_manage.controller.js'),
+        this.destinationPath('src/client/modules/manage/code/controllers/manage.controller.js'));
+      this.fs.copy(
+        this.templatePath('_src/_client/_modules/_manage/_code/_views/_manage.html'),
+        this.destinationPath('src/client/modules/manage/code/views/manage.html'));
+      this.fs.copy(
+        this.templatePath('_src/_client/_modules/_manage/_code/_styles/_manage.scss'),
+        this.destinationPath('src/client/modules/manage/code/styles/manage.scss'));
+      this.fs.copy(
+        this.templatePath('_src/_client/_modules/_manage/_code/_services/_manage.service.js'),
+        this.destinationPath('src/client/modules/manage/code/services/manage.service.js'));
+      this.fs.copy(
+        this.templatePath('_src/_client/_modules/_manage/_code/_manage.js'),
+        this.destinationPath('src/client/modules/manage/code/manage.js'));
+      this.fs.copy(
+        this.templatePath('_src/_client/_modules/_manage/_code/_manage.routing.js'),
+        this.destinationPath('src/client/modules/manage/code/manage.routing.js'));
+      // client config
+      this.fs.copy(
+        this.templatePath('_src/_client/_app.config.js'),
+        this.destinationPath('src/client/app.config.js'));
+      this.fs.copy(
+        this.templatePath('_src/_client/_app.js'),
+        this.destinationPath('src/client/app.js'));
+      this.fs.copy(
+        this.templatePath('_src/_client/_app.scss'),
+        this.destinationPath('src/client/app.scss'));
+      this.fs.copy(
+        this.templatePath('_src/_client/_base.controller.js'),
+        this.destinationPath('src/client/base.controller.js'));
+      this.fs.copy(
+        this.templatePath('_src/_client/_index.html'),
+        this.destinationPath('src/client/sindex.html'));
+      // server
+      this.fs.copy(
+        this.templatePath('_src/_server/_app.js'),
+        this.destinationPath('src/server/app.js'));
+      this.fs.copy(
+        this.templatePath('_src/_server/_data.js'),
+        this.destinationPath('src/server/data.js'));
+      this.fs.copy(
+        this.templatePath('_src/_server/_favicon.ico'),
+        this.destinationPath('src/server/favicon.ico'));
+      this.fs.copy(
+        this.templatePath('_src/_server/_routes.js'),
+        this.destinationPath('src/server/routes.js'));
+      this.fs.copy(
+        this.templatePath('_src/_server/_modules/_demo/_new-app-data.js'),
+        this.destinationPath('src/server/modules/demo/new-app-data.js'));
+      this.fs.copy(
+        this.templatePath('_src/_server/_modules/_demo/_new-app-routes.js'),
+        this.destinationPath('src/server/modules/demo/new-app-routes.js'));
+      this.fs.copy(
+        this.templatePath('_src/_server/_utils/_404.js'),
+        this.destinationPath('src/server/utils/404.js'));
+      this.fs.copy(
+        this.templatePath('_src/_server/_utils/_json.js'),
+        this.destinationPath('src/server/utils/json.js'));
+      // test
+      this.fs.copy(
+        this.templatePath('_src/_test/_e2e/_demo.spec.js'),
+        this.destinationPath('src/test/e2e/demo.spec.js'));
+      this.fs.copy(
+        this.templatePath('_src/_test/_e2e/_demo1.spec.js'),
+        this.destinationPath('src/test/e2e/demo1.spec.js'));
+      this.fs.copy(
+        this.templatePath('_src/_test/_unit/_webpack.karma.context.js'),
+        this.destinationPath('src/test/unit/webpack.karma.context.js'));
     }
   },
 
