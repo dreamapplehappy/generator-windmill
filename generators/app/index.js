@@ -37,15 +37,15 @@ module.exports = yeoman.Base.extend({
   writing: {
     config: function() {
       this.fs.copy(
-        this.templatePath('eslintrc'),
+        this.templatePath('.eslintrc'),
         this.destinationPath('.eslintrc')
       );
       this.fs.copy(
-        this.templatePath('gitignore'),
+        this.templatePath('.gitignore'),
         this.destinationPath('.gitignore')
       );
       this.fs.copy(
-        this.templatePath('stylelintrc'),
+        this.templatePath('.stylelintrc'),
         this.destinationPath('.stylelintrc')
       );
       this.fs.copy(
@@ -341,7 +341,7 @@ module.exports = yeoman.Base.extend({
         this.destinationPath('src/client/base.controller.js'));
       this.fs.copy(
         this.templatePath('_src/_client/_index.html'),
-        this.destinationPath('src/client/sindex.html'));
+        this.destinationPath('src/client/index.html'));
       // server
       this.fs.copy(
         this.templatePath('_src/_server/_app.js'),

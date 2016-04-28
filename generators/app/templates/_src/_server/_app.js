@@ -18,7 +18,6 @@ app.use(logger('dev'));
 
 ////////// 以下部分是关于路由的具体部分
 app.use('/api/new-app', require('./modules/demo/new-app-routes'));
-app.use('/api/wechat', require('./modules/wechat/new-app-routes'));
 
 ////////// 详细的路由放置在
 app.use('/api', require('./routes'));
