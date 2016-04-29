@@ -3,49 +3,97 @@ var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
 
-module.exports = yeoman.Base.extend({
-
-  prompting: function () {
+module.exports = yeoman.generators.Base.extend({
+  //Configurations will be loaded here.
+  //Ask for user input
+  prompting: function() {
     var done = this.async();
-
-    // Have Yeoman greet the user.
-    this.log(yosay(
-      'Welcome to the laudable ' + chalk.green('generator-windmill') + ' generator!'
-    ));
-
-    var prompts = [
-      {
-        type: 'input',
-        name: 'appName',
-        message: 'What is your app\'s name ?'
-      },
-      {
-        type: 'confirm',
-        name: 'someAnswer',
-        message: 'Would you like to enable this option?',
-        default: true
-      }];
-
-    this.prompt(prompts, function (props) {
-      this.props = props;
-      // To access props later use this.props.someAnswer;
-
+    this.prompt({
+      type: 'input',
+      name: 'name',
+      message: 'Your project name',
+      //Defaults to the project's folder name if the input is skipped
+      default: this.appname
+    }, function(answers) {
+      this.props = answers;
+      this.log(answers.name);
       done();
     }.bind(this));
   },
-
+  //Writing Logic here
+  //writing: {
+  //  //Copy the configuration files
+  //  config: function() {
+  //    this.fs.copyTpl(
+  //      this.templatePath('_package.json'),
+  //      this.destinationPath('package.json'), {
+  //        name: this.props.name
+  //      }
+  //    );
+  //    this.fs.copyTpl(
+  //      this.templatePath('_bower.json'),
+  //      this.destinationPath('bower.json'), {
+  //        name: this.props.name
+  //      }
+  //    );
+  //    this.fs.copy(
+  //      this.templatePath('bowerrc'),
+  //      this.destinationPath('.bowerrc')
+  //    );
+  //  },
+  //
+  //  //Copy application files
+  //  app: function() {
+  //    //Server file
+  //    this.fs.copyTpl(
+  //      this.templatePath('_server.js'),
+  //      this.destinationPath('server.js'),
+  //      this.destinationPath('/views/index.ejs'), {
+  //        name: this.props.name
+  //      }
+  //    );
+  //    /////Routes
+  //    this.fs.copy(
+  //      this.templatePath('_routes/_all.js'),
+  //      this.destinationPath('routes/all.js'));
+  //
+  //
+  //    // Model
+  //    this.fs.copy(
+  //      this.templatePath('_model/_todo.js'),
+  //      this.destinationPath('model/todo.js'));
+  //
+  //    // Views
+  //    this.fs.copyTpl(
+  //      this.templatePath('_views/_index.ejs'),
+  //      this.destinationPath('/views/index.ejs'), {
+  //        name: this.props.name
+  //      }
+  //    );
+  //
+  //    // Public/
+  //    this.fs.copy(
+  //      this.templatePath('_public/_css/_app.css'),
+  //      this.destinationPath('public/css/app.css')
+  //    );
+  //    this.fs.copy(
+  //      this.templatePath('_public/_js/_app.js'),
+  //      this.destinationPath('public/js/app.js')
+  //    );
+  //  }
+  //},
   writing: {
     config: function() {
       this.fs.copy(
-        this.templatePath('.eslintrc'),
+        this.templatePath('eslintrc'),
         this.destinationPath('.eslintrc')
       );
       this.fs.copy(
-        this.templatePath('.gitignore'),
+        this.templatePath('gitignore'),
         this.destinationPath('.gitignore')
       );
       this.fs.copy(
-        this.templatePath('.stylelintrc'),
+        this.templatePath('stylelintrc'),
         this.destinationPath('.stylelintrc')
       );
       this.fs.copy(
@@ -379,8 +427,7 @@ module.exports = yeoman.Base.extend({
         this.destinationPath('src/test/unit/webpack.karma.context.js'));
     }
   },
-
-  install: function () {
+  install: function() {
     this.installDependencies();
   }
 });

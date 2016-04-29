@@ -1,0 +1,63 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,      // 使用ES6
+    "sourceType": "module", // 代码的类型 我们的工作流程中是[module]
+    "ecmaFeatures": {
+      "globalReturn": true, //
+      "impliedStrict": true, //
+      "jsx": false,          //
+      "experimentalObjectRestSpread": false
+    }
+  },
+  "plugins": [
+    "angular"
+  ],
+  //  "parser": "esprima",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "mocha": true,
+    "jasmine": true,
+    "phantomjs": true,
+    "jquery": true,
+    "protractor": true,
+    "angular/angular": true,
+    "angular/mocks": true,
+    "angular/protractor": true
+  },
+  "rules": {
+    // 使用完全等与代替等于
+    "eqeqeq": 1,
+    // 代码块强制使用括号
+    "curly": 2,
+    // 代码中是否存在未使用变量
+    "no-unused-vars": 0,
+    // 关于缩进
+    "indent": ["off", 0, { "VariableDeclarator":{ "var": 2, "let": 2, "const": 3 },"SwitchCase": 1}],
+    // 注释前是否可以有空格
+    "spaced-comment": 0,
+    "padded-blocks": 0,
+    "semi": 0,
+    "keyword-spacing": 0,
+    "no-negated-condition": 0,
+    "brace-style": 0,
+    "no-else-return": 0,
+    "arrow-parens": 0,
+    "no-undef": 0,
+    "eol-last": 0,
+    "no-warning-comments": 0,
+    "no-lonely-if": 0,
+    "space-before-function-paren": 0,
+    "yoda": 0,
+    "space-before-blocks": 0,
+    "no-multiple-empty-lines": 0,
+    "camelcase": 1,
+    // 字符串使用的是单引号还是双引号 [我们使用单引号,如果不是单引号显示错误]
+    "quotes": [2, "single"],
+    "quote-props": 0,
+    "comma-spacing": 0,
+    "no-useless-constructor": 0,
+    "key-spacing": 0
+  }
+}
