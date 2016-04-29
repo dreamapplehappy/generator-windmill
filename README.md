@@ -1,3 +1,14 @@
+======1.关于安装只使用npm install 不使用bower install
+2.关于模块的选择weui, tab, 
+3.package.json
+4.那些包是不需要的
+5.css类名的命名方法
+6.删除bootstrap
+7.使用多种方式书写样式文件
+8.关于方法的演示,$q的使用,
+9.如何书写指令,等各种部分的书写
+10.
+------
 # generate-windmill
 
 ## 一个结合`Angular 1.5.x`,`ES6`,`Webpack`,`Gulp`,`ocLazyLoad`的脚手架工具,帮助快速开发你的NG应用
@@ -28,4 +39,4 @@ npm i generator-windmill -g
 + 运行`gulp build`进行打包
 + 运行`gulp deploy`进行部署
 
-## 具体的说明 qwe
+## 具体的说明

@@ -428,6 +428,9 @@ module.exports = yeoman.generators.Base.extend({
     }
   },
   install: function() {
-    this.installDependencies();
+    // 安装npm依赖
+    this.npmInstall();
+    // 安装全部依赖
+    //this.installDependencies();
   }
 });
