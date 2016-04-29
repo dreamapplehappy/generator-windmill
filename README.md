@@ -28,4 +28,4 @@ npm i generator-windmill -g
 + 运行`gulp build`进行打包
 + 运行`gulp deploy`进行部署
 
-## 具体的说明
+## 具体的说明 qwe
