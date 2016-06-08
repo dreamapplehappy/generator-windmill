@@ -1,0 +1,41 @@
+<div class="weui_navbar red-packet-weui_navbar">
+    <div ng-click="vm.getRedPacketsInfo('unused')"
+         ng-class="{'tab-active-bgc': vm.leftActive}"
+         class="weui_navbar_item">可用红包</div>
+    <div ng-click="vm.getRedPacketsInfo('used')"
+         ng-class="{'tab-active-bgc': !vm.leftActive}"
+         class="weui_navbar_item">历史记录</div>
+</div>
+
+<div class="weui_msg red-packet-weui_msg" ng-show="0 === vm.redPackets.length">
+    <div class="weui_icon_area"><i class="weui_icon_info weui_icon_msg"></i></div>
+    <div class="weui_text_area">
+        <h2 class="weui_msg_title">暂无</h2>
+        <p class="weui_msg_desc"></p>
+    </div>
+</div>
+
+<div class="gift-money">
+
+    <ul class="content">
+        <div ui-sref="packets-detail-red-packet({id:v.id})" ng-repeat="v in vm.redPackets">
+            <li class="single">
+                <div class="upper">
+                    <h2 class="text-center">{{v.red_packet_template.name}}</h2>
+                    <div class="upper-l inline-block">
+                        ￥<span class="fs-3">{{v.value}}.</span><span class="fs-1-5">0</span>
+                    </div>
+                    <div class="upper-r inline-block text-right">
+                        <p>粉丝专享</p>
+                        <p>有效期：{{v.red_packet_template.end_time}}</p>
+                    </div>
+                    <div class="clearfix">
+                    </div>
+                </div>
+                <div class="lower">
+                    <p>来自{{v.business.shop_name}}的分享</p>
+                </div>
+            </li>
+        </div>
+    </ul>
+</div>

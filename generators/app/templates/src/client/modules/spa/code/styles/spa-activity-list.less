@@ -1,0 +1,73 @@
+.border-box{
+  box-sizing: border-box;
+  div {
+    box-sizing: border-box;
+  }
+}
+
+.clear-both{
+  &:after{
+    content: ' ';
+    display: block;
+    clear: both;
+  }
+}
+
+.activity-list{
+  background-color: #fff;
+  .pic{
+    position: relative;
+
+    .img-responsive{
+      width: 100%;
+      display: block;
+    }
+
+    .text{
+      padding: 10px 15px;
+
+      p{
+        margin-bottom: 5px;
+      }
+
+      .title{
+        font-size: 15px;
+        color: #000;
+      }
+
+      .tag{
+        font-size: 13px;
+        color: #888;
+      }
+
+      .btns{
+        button{
+          font-size: 11px;
+          color: #888;
+          border: 1px solid #c6c6c6;
+          display: inline-block;
+          width: auto;
+          line-height: 1.8;
+          padding: 0 8px;
+
+          &.fr{
+            float: right;
+          }
+
+          .active{
+            color: #81bf30;
+          }
+        }
+        .weui_btn + .weui_btn {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+  .more{
+    text-align: center;
+    color: #888;
+    font-size: 10px;
+    padding-bottom: 15px;
+  }
+}

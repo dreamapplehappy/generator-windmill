@@ -1,0 +1,59 @@
+<div class="user-register">
+    <div class="user-register__header">
+
+    </div>
+    <div class="weui_cells">
+        <div class="weui_cell weui_cell_select weui_select_before">
+            <div class="weui_cell_hd">
+                <select class="weui_select" name="select2">
+                    <option value="1">+86</option>
+                </select>
+            </div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <input ng-model="vm.phone" class="weui_input" type="tel" placeholder="请输入号码">
+            </div>
+        </div>
+    </div>
+    <div class="weui_cells weui_cells_form user-register__verification">
+        <div class="weui_cell">
+            <div class="weui_cell_hd"><label class="weui_label">验证码</label></div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <input ng-model="vm.code" class="weui_input" type="tel" placeholder="">
+                <a ng-click="vm.getVerificationCode()"
+                   class="weui_btn weui_btn_mini weui_btn_primary"
+                   ng-class="{'user-register--btn-disabled':vm.btn_disabled}">{{vm.btn_text}}</a>
+            </div>
+        </div>
+    </div>
+    <!-- 暂时不需要 -->
+    <!--<div class="weui_cells weui_cells_form">-->
+        <!--<div class="weui_cell">-->
+            <!--<div class="weui_cell_hd"><label class="weui_label">邀请码</label></div>-->
+            <!--<div class="weui_cell_bd weui_cell_primary">-->
+                <!--<input ng-model="vm.invitationCode" class="weui_input" placeholder="选填">-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+
+    <div class="user-register__generate">
+        <a class="weui_btn weui_btn_primary" ng-click="vm.checkVerificationCode()">生成逸族ID</a>
+    </div>
+</div>
+
+<!-- toast -->
+<weui-toast
+        show="vm.show_toast"
+        toast-info="vm.toast_info">
+</weui-toast>
+<!-- toast -->
+
+<!-- alert-dialog -->
+<weui-alert-dialog
+        alert-dialog-title="vm.alert_dialog_title"
+        alert-dialog-content="vm.alert_dialog_content"
+        alert-dialog-btn-text="vm.alert_dialog_btn_text"
+        show="vm.show_alert_dialog"
+        btn-action="vm.alertDialogAction()">
+</weui-alert-dialog>
+<!-- alert-dialog -->

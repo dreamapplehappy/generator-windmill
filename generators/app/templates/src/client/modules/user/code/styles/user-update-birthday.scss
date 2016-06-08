@@ -1,0 +1,31 @@
+.update-user-birthday {
+  &__verification {
+    position: relative;
+    a {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background-color: #81bf30;
+      outline: none;
+      &:active {
+        background-color: #81bf30;
+        color: #fff;
+      }
+    }
+  }
+  &--btn-disabled {
+    background-color: #ccc!important;
+  }
+  &__generate {
+    margin-top: 25px;
+    padding: 0 15px;
+    a {
+      background-color: #81bf30;
+      outline: none;
+      &:active {
+        background-color: #81bf30;
+        color: #fff;
+      }
+    }
+  }
+}

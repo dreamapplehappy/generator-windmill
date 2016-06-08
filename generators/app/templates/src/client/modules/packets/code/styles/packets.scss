@@ -1,0 +1,12 @@
+$coupon-tabs-padding: 10px;
+
+.packets-container {
+  .packet-padding {
+    margin-top: $coupon-tabs-padding;
+  }
+  .packet-logo {
+    width: 20px;
+    margin-right: 5px;
+    display: block;
+  }
+}

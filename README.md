@@ -1,13 +1,14 @@
-======1.关于安装只使用npm install 不使用bower install
-2.关于模块的选择weui, tab, 
-3.package.json
-4.那些包是不需要的
-5.css类名的命名方法
-6.删除bootstrap
-7.使用多种方式书写样式文件
-8.关于方法的演示,$q的使用,
-9.如何书写指令,等各种部分的书写
-10.
+# 需要解决的问题
+------
++ ~~关于安装只使用npm install 不使用bower install~~
++ 关于模块的选择weui, tab, 
++ ~~package.json~~
++ 那些包是不需要的
++ css类名的命名方法
++ 删除bootstrap
++ ~~使用多种方式书写样式文件~~
++ ~~关于方法的演示,$q的使用~~
++ ~~如何书写指令,等各种部分的书写~~
 ------
 # generate-windmill
 

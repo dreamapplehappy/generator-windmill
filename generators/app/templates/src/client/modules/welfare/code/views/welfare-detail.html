@@ -1,0 +1,124 @@
+<div class="welfare-detail-container">
+
+    <div class="welfare-detail-container-header">
+        <div class="welfare-detail-container-header__poster">
+            <img ng-src="{{vm.welfareInfo.img}}" alt="">
+        </div>
+        <div class="welfare-detail-container-header__title">
+            <div class="title-padding"></div>
+            <div class="title">{{vm.welfareInfo.name}}</div>
+        </div>
+        <div class="welfare-detail-container-header__get">
+            <div class="left">
+                <div class="focus">
+                    <span class="icon-container icon-container-focus"></span>
+                    <span class="words-container">{{vm.uv || 0}}人关注</span>
+                </div>
+                <div class="require" ng-show="false">
+                    <span class="icon-container icon-container-like" ng-show="false"></span>
+                    <span class="words-container" ng-show="false">爱好者或者以上</span>
+                    <span class="icon-container icon-container-c" ng-show="true"></span>
+                    <span class="words-container" ng-show="true">参与者或者以上</span>
+                    <span class="icon-container icon-container-y" ng-show="false"></span>
+                    <span class="words-container" ng-show="false">运营者或者以上</span>
+                </div>
+            </div>
+            <div class="right">
+                <a href="{{vm.welfareInfo.url}}" class="link-welfare weui_btn weui_btn_mini weui_btn_primary">领取福利</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="welfare-detail-container-info">
+        <div class="weui_cells">
+            <div class="weui_cell">
+                <div class="weui_cell_hd"></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p class="welfare-detail-container-info__title">福利详情</p>
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd"></div>
+                <div class="weui_cell_bd weui_cell_primary welfare-detail-container-info__content">
+                    <div class="welfare-fix" ng-bind-html="vm.replaceDetail(vm.welfareInfo.detail)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="welfare-detail-container-comment">
+        <div class="weui_cells">
+            <div class="weui_cell">
+                <div class="weui_cell_hd"></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p class="welfare-detail-container-comment__title">精彩评论</p>
+                </div>
+            </div>
+
+            <div class="weui_cell welfare-detail-container-comment__comment">
+                <div class="weui_cell_hd head-pic-container">
+                    <img ng-src="{{vm.userInfo.wx_headpic}}" alt="">
+                </div>
+                <div class="weui_cell_bd weui_cell_primary input-container">
+                    <textarea ng-model="vm.content" class="weui_textarea comment" id="textarea" placeholder="&nbsp;我来说点什么..."></textarea>
+                </div>
+                <div class="send">
+                    <button ng-disabled="!vm.content" ng-click="vm.createComment()" class="weui_btn weui_btn_mini weui_btn_primary">发布</button>
+                </div>
+            </div>
+
+            <div class="wx-comment-section" ng-repeat="v in vm.commentsList">
+                <div class="weui_cell welfare-detail-container-comment__comment">
+                    <div class="weui_cell_hd head-pic-container">
+                        <img ng-src="{{v.user.wx_headpic}}" alt="">
+                    </div>
+                    <div class="weui_cell_bd weui_cell_primary comment-container">
+                        <div class="username">{{v.user.wx_nickname}}</div>
+                        <div class="comment-placeholder">
+                            <div class="real-comment">&nbsp;</div>
+                            <div class="comment-date">&nbsp;</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="comment-words-container">
+                    <div class="words">
+                        {{v.content}}
+                        <div class="date">
+                            {{v.created_at}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="weui_cell welfare-detail-container-comment__comment">
+
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p ng-click="vm.getMoreComments()" class="loading-more">{{vm.loadingText}}</p>
+    </div>
+    <button ng-if=false
+            ng-disabled="true"
+            ng-class="{'join-community-disabled': true}"
+            ng-click="vm.joinCommunity()"
+            class="weui_btn weui_btn_primary join-community">加入社群</button>
+</div>
+
+
+
+<!-- toast -->
+<weui-toast
+        show="vm.show_toast"
+        toast-info="vm.toast_info">
+</weui-toast>
+<!-- toast -->
+
+<!-- alert-dialog -->
+<weui-alert-dialog
+        alert-dialog-title="vm.alert_dialog_title"
+        alert-dialog-content="vm.alert_dialog_content"
+        alert-dialog-btn-text="vm.alert_dialog_btn_text"
+        show="vm.show_alert_dialog"
+        btn-action="vm.alertDialogAction()">
+</weui-alert-dialog>
+<!-- alert-dialog -->

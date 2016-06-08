@@ -1,0 +1,14 @@
+$home-header-h:100px;
+$head-pic-h: 60px;
+
+.home-header {
+  height: $home-header-h;
+  background-image: url('../images/home__home-header.png');
+}
+.home-body {
+  .head-pic {
+    width: $home-header-h;
+    height: $home-header-h;
+    border-radius: 50%;
+  }
+}

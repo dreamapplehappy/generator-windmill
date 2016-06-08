@@ -1,0 +1,55 @@
+<div class="weui_navbar coupon-weui_navbar">
+    <div class="weui_navbar_item"
+         ng-class="{'tab-active-bgc': vm.leftActive}"
+         ng-click="vm.getCouponsInfo('unused')">
+        可用优惠券
+    </div>
+    <div class="weui_navbar_item"
+         ng-class="{'tab-active-bgc': !vm.leftActive}"
+         ng-click="vm.getCouponsInfo('used')">
+        历史记录
+    </div>
+</div>
+
+<div class="weui_msg coupon-weui_msg" ng-show="0 === vm.coupons.length">
+    <div class="weui_icon_area"><i class="weui_icon_info weui_icon_msg"></i></div>
+    <div class="weui_text_area">
+        <h2 class="weui_msg_title">暂无</h2>
+        <p class="weui_msg_desc"></p>
+    </div>
+</div>
+
+<div class="my-coupon">
+    <div class="my-coupon-content">
+        <div ui-sref="packets-detail-coupon({id:v.id})" ng-repeat="v in vm.coupons">
+            <div class="single-coupon" ng-class="{'single-coupon-used': 'used' === vm.couponsParams.status}">
+                <div class="upper">
+                    <div class="upper-l">
+                        <div class="coupon-logo">
+                            <img ng-src="{{v.business.logo}}"></div>
+                    </div>
+                    <div class="upper-r">
+                        <p class="coupon-v" ng-show="'m' === v.coupon_template.type">
+                            <span>{{v.coupon_template.data.value}}</span>
+                            元优惠券
+                        </p>
+                        <p class="coupon-v" ng-show="'d' === v.coupon_template.type">
+                            <span>{{v.coupon_template.data.value}}</span>
+                            折优惠券
+                        </p>
+                        <p class="coupon-v" ng-show="'c' === v.coupon_template.type">
+                            <span></span>
+                            {{v.coupon_template.data.value}}
+                        </p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="lower">
+                    <span class="lower-l">来自{{v.business.shop_name}}</span>
+                    <span class="lower-r">有效期至{{v.coupon_template.end_time}}</span>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

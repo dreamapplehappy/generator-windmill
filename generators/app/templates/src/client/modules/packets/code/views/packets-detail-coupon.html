@@ -1,0 +1,56 @@
+<div class="packets-detail-container">
+    <div class="packets-detail-ticket coupon-bgc">
+        <div class="packets-detail-ticket__content">
+            <div class="up">
+                <div class="logo-container">
+                    <img ng-src="{{vm.coupon.business.logo}}" alt="">
+                </div>
+                <div class="business-name-padding"></div>
+                <div class="business-name">{{vm.coupon.business.shop_name}}</div>
+                <div class="ticket-name" ng-show="'m' === vm.coupon.coupon_template.type">{{vm.coupon.coupon_template.data.value}}元现金券</div>
+                <div class="ticket-name" ng-show="'d' === vm.coupon.coupon_template.type">{{vm.coupon.coupon_template.data.value}}折优惠券</div>
+                <div class="ticket-name" ng-show="'c' === vm.coupon.coupon_template.type">{{vm.coupon.coupon_template.data.value}}</div>
+            </div>
+            <div class="down">
+                <div class="coupon-bgc fix-ticket-circle-l"></div>
+                <div class="coupon-bgc fix-ticket-circle-r"></div>
+                <div class="qr-code">
+                    <img ng-src="/common/qrcode?key={{vm.toUrl(vm.coupon.coupon_template.id, vm.coupon.no)}}" alt="">
+                </div>
+                <div class="coupon-code">{{vm.coupon.no}}</div>
+                <!--<div class="info">{{vm.coupon.coupon_template.intro}}</div>-->
+                <div class="limit-date">有效期: {{vm.coupon.coupon_template.begin_time}} - {{vm.coupon.coupon_template.end_time}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="packets-detail">
+        <div class="weui_cells">
+            <div class="weui_cell">
+                <div class="weui_cell_hd"></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p class="packets-detail__title">优惠券详情</p>
+                </div>
+            </div>
+
+            <article class="weui_article">
+                <section>
+                    <section>
+                        <h3 class="packets-detail__little-title">使用规则</h3>
+                        <p class="packets-detail__content" ng-bind-html="vm.replaceDetail(vm.coupon.coupon_template.intro)"></p>
+                    </section>
+                    <section>
+                        <h3 class="packets-detail__little-title">适用门店</h3>
+                        <p class="packets-detail__content" ng-bind-html="vm.replaceDetail(vm.coupon.business.shop_address)"></p>
+                    </section>
+                    <section ng-show="vm.wx.qrcode || vm.wx.name">
+                        <h3 class="packets-detail__little-title">关于我们</h3>
+                        <img ng-show="vm.wx.qrcode" class="about-us" ng-src="{{vm.wx.qrcode}}" alt="">
+                        <p ng-show="vm.wx.name" class="wechat-number">微信公众号: {{vm.wx.name}}</p>
+                    </section>
+                </section>
+            </article>
+        </div>
+    </div>
+
+</div>

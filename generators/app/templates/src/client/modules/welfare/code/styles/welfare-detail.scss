@@ -1,0 +1,255 @@
+$welfare-detail-poster-h: 190px;
+$welfare-detail-title-container-h: 30px;
+$welfare-detail-title-mt: 15px;
+$welfare-detail-title-h: 15px;
+$welfare-detail-title-s: 18px;
+$welfare-detail-title-indent: 10px;
+$welfare-detail-get-h: 50px;
+$welfare-detail-get-lw-p: 2/3;
+$welfare-detail-get-left-content-h: 12px;
+$welfare-detail-get-right-btn-h: 25px;
+$basic-c: #84bd3c;
+$welfare-detail-padding: 15px;
+$welfare-detail-comment-basic-height: 40px;
+$welfare-detail-comment-basic-head-height: 40px;
+$welfare-detail-comment-pic-p: 18.75%;
+$welfare-detail-comment-username-h: 25px;
+$welfare-detail-comment-normal-s: 16px;
+$welfare-detail-textarea-h: 30px;
+
+
+.welfare-detail-container {
+
+  .welfare-detail-container-header {
+    background-color: #fff;
+    &__poster {
+      height: $welfare-detail-poster-h;
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &__title {
+      height: $welfare-detail-title-container-h;
+      .title-padding {
+        height: 15px;
+      }
+      .title {
+        text-indent: $welfare-detail-title-indent;
+        margin-top: $welfare-detail-title-h;
+        height: $welfare-detail-title-h;
+        line-height: $welfare-detail-title-h;
+        font-size: $welfare-detail-title-s;
+      }
+    }
+    &__get {
+      height: $welfare-detail-get-h;
+      overflow: auto;
+      .left {
+        width: 100% * $welfare-detail-get-lw-p;
+        height: $welfare-detail-get-left-content-h;
+        line-height: $welfare-detail-get-left-content-h;
+        font-size: 12px;
+        margin: ($welfare-detail-get-h - $welfare-detail-get-left-content-h) / 2 auto;
+        float: left;
+        .focus, .require {
+          width: 50%;
+          float: left;
+          height: 100%;
+          text-indent: $welfare-detail-title-indent;
+          white-space:nowrap;
+          .icon-container {
+            display: inline-block;
+            vertical-align:middle;
+            width: $welfare-detail-get-left-content-h;
+            height: $welfare-detail-get-left-content-h;
+            background-size: cover;
+          }
+          .icon-container-focus {
+            background-image: url('../images/welfare-detail__icon--focus.png');
+          }
+          .icon-container-c {
+            background-image: url('../images/welfare-detail__icon--c.png');
+          }
+          .icon-container-like {
+            background-image: url('../images/welfare-detail__icon--like.png');
+          }
+          .icon-container-y {
+            background-image: url('../images/welfare-detail__icon--y.png');
+          }
+          .words-container {
+            text-indent: 0;
+            display: inline-block;
+            vertical-align:middle;
+            height: $welfare-detail-get-left-content-h;
+          }
+        }
+      }
+      .right {
+        width: 100% * (1 - $welfare-detail-get-lw-p);
+        height: 100%;
+        float: left;
+        overflow: auto;
+        .link-welfare {
+          width: 80px;
+          height: $welfare-detail-get-right-btn-h;
+          display: block;
+          margin: ($welfare-detail-get-h - $welfare-detail-get-right-btn-h) / 2 auto;
+          font-size: 14px;
+          line-height: $welfare-detail-get-right-btn-h;
+          background-color: $basic-c;
+        }
+      }
+    }
+  }
+
+  .welfare-detail-container-info {
+    margin-top: $welfare-detail-padding;
+    &__title {
+      font-size: $welfare-detail-title-s;
+    }
+    &__content {
+      color: #888;
+    }
+  }
+
+  .welfare-detail-container-comment {
+    margin-top: $welfare-detail-padding;
+    &__title {
+      font-size: $welfare-detail-title-s;
+    }
+    .wx-comment-section {
+      position: relative;
+      &:before {
+        content: " ";
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 1px;
+        border-top: 1px solid #d9d9d9;
+        color: #d9d9d9;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        -webkit-transform: scaleY(.5);
+        transform: scaleY(.5);
+        left: 15px;
+      }
+    }
+    .comment-words-container {
+      padding: 10px 15px;
+      position: relative;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      .words {
+        margin-top: -35px;
+        padding-left:$welfare-detail-comment-pic-p;
+        //padding-right: 31.25%;
+        padding-right: 10%;
+        color: #888;
+        font-size: $welfare-detail-comment-normal-s;
+        line-height: $welfare-detail-comment-username-h;
+      }
+      .date {
+        padding-left:0;
+        font-size: 12px;
+      }
+    }
+    &__comment {
+      .input-container {
+        .comment {
+          text-indent: 10px;
+          line-height: $welfare-detail-textarea-h;
+          height: $welfare-detail-textarea-h;
+          border: 1px solid #888;
+          border-radius: $welfare-detail-textarea-h * 4 / 15;
+        }
+      }
+      .send {
+        button {
+          margin-left: 10px;
+          background-color: $basic-c;
+          height: 30px;
+        }
+      }
+      .head-pic-container {
+        height: $welfare-detail-comment-basic-height;
+        width: $welfare-detail-comment-pic-p;
+        img {
+          display: block;
+          width: $welfare-detail-comment-basic-head-height;
+          height: $welfare-detail-comment-basic-head-height;
+          border-radius: 50%;
+          margin: ($welfare-detail-comment-basic-height - $welfare-detail-comment-basic-head-height) / 2 auto;
+        }
+      }
+      .comment-container {
+        height: $welfare-detail-comment-basic-height;
+        width: 1 - $welfare-detail-comment-pic-p;
+        .username {
+          height: $welfare-detail-comment-username-h;
+          line-height: $welfare-detail-comment-username-h;
+          font-size: $welfare-detail-comment-normal-s;
+        }
+        .comment-placeholder {
+          font-size: $welfare-detail-comment-normal-s;
+          height: $welfare-detail-comment-basic-height - $welfare-detail-comment-username-h;
+          line-height: $welfare-detail-comment-basic-height - $welfare-detail-comment-username-h;
+          color: #888;
+          .real-comment {
+            text-indent: 3px;
+            width: 80%;
+            float: left;
+            line-height: $welfare-detail-comment-username-h;
+          }
+          .comment-date {
+            width: 20%;
+            float: left;
+            font-size: 14px;
+            text-align: center;
+            white-space:nowrap;
+            line-height: $welfare-detail-comment-basic-height - $welfare-detail-comment-username-h;
+          }
+        }
+      }
+
+
+    }
+  }
+  
+  .footer {
+    .loading-more {
+      margin: 12px auto;
+      //margin-bottom: 52px;
+      text-align: center;
+      color: #dcdcdc;
+    }
+  }
+  .join-community {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+  }
+  .join-community-active {
+    background-color: $basic-c;
+  }
+  .join-community-disabled {
+    background-color: #999 !important;
+  }
+}
+.welfare-fix {
+  img {
+    width: 100%;
+  }
+}
+.link-welfare {
+
+}

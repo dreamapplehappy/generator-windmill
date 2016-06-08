@@ -1,0 +1,28 @@
+<div class="my-welfare border-box">
+    <a ui-sref="welfare-detail({id:v.id,association_id:v.association_id})" ng-repeat="v in vm.welfares track by $index">
+        <div class="pic">
+            <img ng-src="{{v.img}}!w300h180" class="img-responsive" alt=""/>
+            <div class="text">{{v.name}}<div class="sale">阅读({{vm.PVS[$index]}})</div></div>
+        </div>
+    </a>
+    <p ng-click="vm.getActivities()" class="more">{{vm.btnText}}</p>
+</div>
+
+
+
+<!-- toast -->
+<weui-toast
+        show="vm.show_toast"
+        toast-info="vm.toast_info">
+</weui-toast>
+<!-- toast -->
+
+<!-- alert-dialog -->
+<weui-alert-dialog
+        alert-dialog-title="vm.alert_dialog_title"
+        alert-dialog-content="vm.alert_dialog_content"
+        alert-dialog-btn-text="vm.alert_dialog_btn_text"
+        show="vm.show_alert_dialog"
+        btn-action="vm.alertDialogAction()">
+</weui-alert-dialog>
+<!-- alert-dialog -->

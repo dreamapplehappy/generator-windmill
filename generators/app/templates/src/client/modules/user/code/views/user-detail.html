@@ -1,0 +1,84 @@
+<div class="user-detail">
+    <div class="weui_cells weui_cells_access">
+        <a class="weui_cell" ui-sref="update-user-username">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>用户名</p>
+            </div>
+            <div class="weui_cell_ft">
+                {{vm.userInfo.base_name || vm.userInfo.wx_nickname}}
+            </div>
+        </a>
+        <a class="weui_cell" ui-sref="update-user-phone">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>手机号</p>
+            </div>
+            <div class="weui_cell_ft">
+                {{vm.userInfo.phone}}
+            </div>
+        </a>
+        <a class="weui_cell" ui-sref="update-user-city">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>所在地</p>
+            </div>
+            <div class="weui_cell_ft">
+                {{vm.userInfo.base_city ||vm.userInfo.wx_address}}
+            </div>
+        </a>
+        <a class="weui_cell" ui-sref="update-user-birthday">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>生日</p>
+            </div>
+            <div class="weui_cell_ft">
+                {{vm.userInfo.base_birth}}
+            </div>
+        </a>
+        <div class="weui_cell weui_cell_select weui_select_after">
+            <!--<div class="weui_cell_hd">-->
+                <!--性别-->
+            <!--</div>-->
+            <div class="weui_cell_bd weui_cell_primary">
+                <select class="weui_select user-detail-weui_select"
+                        ng-change="vm.updateUserInfo()"
+                        ng-options="type.value as type.name for type in vm.types"
+                        ng-model="vm.userInfo.base_sex">
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- 以后使用 -->
+    <!--<div class="weui_panel">-->
+        <!--<div class="weui_panel_hd user-detail__hd">-->
+            <!--标签-->
+        <!--</div>-->
+        <!--<div class="weui_panel_bd">-->
+            <!--<div class="weui_media_box weui_media_text">-->
+                <!--<span class="user-detail__brand user-detail__brand&#45;&#45;green">80后</span>-->
+                <!--<span class="user-detail__brand user-detail__brand&#45;&#45;blue">不吃葱</span>-->
+                <!--<span class="user-detail__brand user-detail__brand&#45;&#45;yellow">萌妹纸</span>-->
+                <!--<span class="user-detail__brand user-detail__brand&#45;&#45;red">游戏</span>-->
+                <!--<span class="user-detail__brand user-detail__brand&#45;&#45;pink">吃货</span>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+
+</div>
+
+<!-- toast -->
+<weui-toast
+        show="vm.show_toast"
+        toast-info="vm.toast_info">
+</weui-toast>
+<!-- toast -->
+
+<!-- alert-dialog -->
+<weui-alert-dialog
+        alert-dialog-title="vm.alert_dialog_title"
+        alert-dialog-content="vm.alert_dialog_content"
+        alert-dialog-btn-text="vm.alert_dialog_btn_text"
+        show="vm.show_alert_dialog"
+        btn-action="vm.alertDialogAction()">
+</weui-alert-dialog>
+<!-- alert-dialog -->
+

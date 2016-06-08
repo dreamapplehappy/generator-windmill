@@ -1,0 +1,43 @@
+.user-detail-weui_select {
+  padding-left: 0;
+}
+
+.user-detail {
+
+  &__hd{
+    line-height: 1.41176471;
+    font-size: 17px;
+    color:#000;
+  }
+  
+  &__brand{
+    height: 4.95vw;
+    border-radius:2.475vw;
+    color:#fff;
+    padding: 1vw 4.6875vw;
+    box-sizing: border-box;
+    font-size: 12px;
+
+    &--green{
+      background: #42dfc5;
+    }
+
+    &--blue{
+      background: #00b7ee;
+    }
+
+    &--yellow{
+      background: #ffbe4b;
+    }
+
+    &--pink{
+      background: #fb4a5f;
+    }
+
+    &--red{
+      background: #eb6877;
+    }
+  }
+
+
+}
