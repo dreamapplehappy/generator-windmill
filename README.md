@@ -11,6 +11,9 @@
 + ~~如何书写指令,等各种部分的书写~~
 -----
 **如果运行的时候出现错误,大多数情况下是`node-sass`或者`optipng-bin`安装失败,此时应该先将依赖安装完成后再次运行...**
+```javascript
+sudo npm install optipng-bin node-sass --save-dev
+```
 ------
 # generate-windmill
 
