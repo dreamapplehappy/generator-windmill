@@ -419,6 +419,12 @@ module.exports = yeoman.generators.Base.extend({
         this.templatePath('src/server/modules/demo/new-app-routes.js'),
         this.destinationPath('src/server/modules/demo/new-app-routes.js'));
       this.fs.copy(
+        this.templatePath('src/server/modules/wechat/new-app-data.js'),
+        this.destinationPath('src/server/modules/wechat/new-app-data.js'));
+      this.fs.copy(
+        this.templatePath('src/server/modules/wechat/new-app-routes.js'),
+        this.destinationPath('src/server/modules/wechat/new-app-routes.js'));
+      this.fs.copy(
         this.templatePath('src/server/utils/404.js'),
         this.destinationPath('src/server/utils/404.js'));
       this.fs.copy(

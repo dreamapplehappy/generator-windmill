@@ -1,6 +1,6 @@
 {
   "name": "generator-windmill",
-  "version": "0.0.14",
+  "version": "0.0.16",
   "description": "Yeoman generator",
   "license": "MIT",
   "main": "app/index.js",
