@@ -1,5 +1,5 @@
 {
-  "name": "windmill",
+  "name": "<%= name %>",
   "version": "1.0.0",
   "description": "尝试使用新的技术,来构建我们的应用",
   "main": "index.js",
